@@ -1,20 +1,20 @@
-import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class AsteroidReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class AsteroidReducer extends Reducer<Text, DoubleWritable, Text, DoubleWritable> {
 
     @Override
-    public void reduce(Text key, Iterable<IntWritable> values, Context context)
+    public void reduce(Text key, Iterable<DoubleWritable> values, Context context)
             throws IOException, InterruptedException {
 
-        int maxDiameter = Integer.MIN_VALUE;
+        double maxDiameter = Integer.MIN_VALUE;
 
-        for (IntWritable value : values) {
+        for (DoubleWritable value : values) {
             maxDiameter = Math.max(maxDiameter, value.get());
         }
-        context.write(key, new IntWritable(maxDiameter));
+        context.write(key, new DoubleWritable(maxDiameter));
     }
 }
