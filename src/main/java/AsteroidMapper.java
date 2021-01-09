@@ -17,10 +17,10 @@ public class AsteroidMapper extends Mapper<LongWritable, Text, Text, IntWritable
         //Dataset and the value of it columns comes from here: https://cneos.jpl.nasa.gov/sentry/
         String[] asteroid = line.split(",");
 
-        String id = asteroid[0];
-        int minYear = Integer.parseInt(asteroid[1].split("-")[0]);
+        String id = asteroid[0].replaceAll("\"", "");
+        int minYear = Integer.parseInt(asteroid[1].replaceAll("\"", "").split("-")[0]);
 
-        int diameter = Integer.parseInt(asteroid[6]);
+        int diameter = Integer.parseInt(asteroid[6].replaceAll("\"", ""));
 
         if (minYear>=2021 && minYear <=2031){
             context.write(new Text(id), new IntWritable(diameter));
