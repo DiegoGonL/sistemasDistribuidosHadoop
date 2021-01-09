@@ -10,7 +10,7 @@ public class AsteroidReducer extends Reducer<Text, DoubleWritable, Text, DoubleW
     public void reduce(Text key, Iterable<DoubleWritable> values, Context context)
             throws IOException, InterruptedException {
 
-        double maxDiameter = Integer.MIN_VALUE;
+        double maxDiameter = Double.MIN_VALUE;
 
         for (DoubleWritable value : values) {
             maxDiameter = Math.max(maxDiameter, value.get());
