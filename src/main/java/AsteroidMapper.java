@@ -18,8 +18,6 @@ public class AsteroidMapper extends Mapper<LongWritable, Text, Text, IntWritable
         String[] asteroid = line.split(",");
 
         String id = asteroid[0];
-        System.out.println(asteroid[1]);
-        System.out.println(asteroid[1].split("-")[0]);
         int minYear = Integer.parseInt(asteroid[1].split("-")[0]);
 
         int diameter = Integer.parseInt(asteroid[6]);
