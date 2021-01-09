@@ -8,7 +8,6 @@ import java.io.IOException;
 
 public class AsteroidMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> {
 
-
     @Override
     public void map(LongWritable key, Text value, Context context)
             throws IOException, InterruptedException {
@@ -19,12 +18,13 @@ public class AsteroidMapper extends Mapper<LongWritable, Text, Text, DoubleWrita
         String[] asteroid = line.split(",");
 
         String id = asteroid[0].replaceAll("\"", "");
-        double minYear = Double.parseDouble(asteroid[1].replaceAll("\"", "").split("-")[0]);
+        int minYear = Integer.parseInt(asteroid[1].replaceAll("\"", "").split("-")[0]);
+        int maxYear = Integer.parseInt(asteroid[1].replaceAll("\"", "").split("-")[1]);
 
         Double diameter = Double.parseDouble(asteroid[6].replaceAll("\"", ""));
 
-        if (minYear>=2021 && minYear <=2031){
-            context.write(new Text(id), new DoubleWritable(diameter));
+        if (minYear == maxYear && minYear>=2021 && minYear <=2031){
+            context.write(new Text("ID [" + id + "] - Year [" + minYear + "]"), new DoubleWritable(diameter));
         }
     }
 }
