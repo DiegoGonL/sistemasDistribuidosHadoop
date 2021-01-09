@@ -18,10 +18,11 @@ public class AsteroidMapper extends Mapper<LongWritable, Text, Text, IntWritable
         String[] asteroid = line.split(",");
 
         String id = asteroid[0];
-        int year = Integer.parseInt(asteroid[1]);
+        int minYear = Integer.parseInt(asteroid[1].split("-")[0]);
+
         int diameter = Integer.parseInt(asteroid[6]);
 
-        if (year>=2021 && year <=2031){
+        if (minYear>=2021 && minYear <=2031){
             context.write(new Text(id), new IntWritable(diameter));
         }
     }

@@ -9,7 +9,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hadoop.version>3.2.1</hadoop.version>
 		<hadoop.mainClass>AsteroidDriver</hadoop.mainClass>
-		<hadoop.fileName>hadoop-practice</hadoop.fileName>
+		<hadoop.fileName>hadoop-practice-dgonzl05</hadoop.fileName>
 	</properties>
 	<dependencies>
 		<!-- Hadoop main client artifact -->
