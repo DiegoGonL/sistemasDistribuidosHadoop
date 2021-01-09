@@ -21,7 +21,7 @@ public class AsteroidMapper extends Mapper<LongWritable, Text, Text, DoubleWrita
         String id = asteroid[0].replaceAll("\"", "");
         double minYear = Double.parseDouble(asteroid[1].replaceAll("\"", "").split("-")[0]);
 
-        int diameter = Integer.parseInt(asteroid[6].replaceAll("\"", ""));
+        Double diameter = Double.parseDouble(asteroid[6].replaceAll("\"", ""));
 
         if (minYear>=2021 && minYear <=2031){
             context.write(new Text(id), new DoubleWritable(diameter));
