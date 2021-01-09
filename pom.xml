@@ -2,13 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hadoopbook</groupId>
-	<artifactId>Hadoop-Practice</artifactId>
+	<artifactId>Hadoop-Practice-dgonzl05</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hadoop.version>3.2.1</hadoop.version>
-		<hadoop.mainClass>MaxTemperatureDriver</hadoop.mainClass>
+		<hadoop.mainClass>AsteroidDriver</hadoop.mainClass>
 		<hadoop.fileName>hadoop-practice</hadoop.fileName>
 	</properties>
 	<dependencies>
