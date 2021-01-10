@@ -1,7 +1,7 @@
-# NCDC-weather-dataset-Hadoop-MapReduce
+# CNEOSdataset-Hadoop-MapReduce
 
-The National Climatic Data Center (NCDC) is the world's largest active archive of weather data.
-https://www.ncei.noaa.gov/data/global-hourly/archive/isd/
+CNEOS is NASA's center for computing asteroid and comet orbits and their odds of Earth impact.
+https://cneos.jpl.nasa.gov/sentry/
 
 # DistributedSystem
 Maven Hadoop project
